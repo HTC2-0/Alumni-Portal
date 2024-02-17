@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RiRadioButtonFill } from 'react-icons/ri';
-import Img1 from "../assets/k1.webp"
-import Img2 from "../assets/k2.png"
-import Img3 from "../assets/k3.png"
-import Img4 from "../assets/k4.png"
+import K1 from "../assets/k1.webp";
+import K2 from "../assets/k2.webp";
+import K3 from "../assets/k3.png";
+import K4 from "../assets/k4.jpg";
 
 const GalleryCarousel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,10 +57,10 @@ const GalleryCarousel = ({ slides }) => {
 };
 
 const slides = [
-  { url: Img1 },
-  { url: Img2 },
-  { url: Img3 },
-  { url: Img4 },
+  { url: K1 },
+  { url: K2 },
+  { url: K3 },
+  { url: K4 },
 ];
 
 export default () => <GalleryCarousel slides={slides} />;
