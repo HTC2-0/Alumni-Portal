@@ -22,7 +22,7 @@ const Profile = () => {
       <Navbar />
 
       <div className="w-full h-48 relative border border-black bg-blue-100">
-        <div className="absolute top-[5.5rem] left-20 w-20 h-20  text-[4rem]">
+        <div className="absolute top-[5.5rem] left-20 w-20 h-20 rounded-full bg-red-600 text-[4rem]">
           <img src={Badge} alt="badge" />
         </div>
 
@@ -36,8 +36,6 @@ const Profile = () => {
           <h1 className="text-4xl text-center mt-8">
             Good {getPartOfDay()}, User!
           </h1>
-        </div>
-        <div>
           <EditButton />
         </div>
       </div>

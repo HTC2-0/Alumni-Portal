@@ -21,12 +21,14 @@ const Register = () => {
             <AcademicDetails />
             <ContactDetails />
 
-            <button
-              className="mt-7 w-[200px] text-white bg-slate-500 border-0 py-2 px-6 focus:outline-none hover:bg-slate-600 rounded text-lg"
-              onSubmit={handleSubmit}
-            >
-              Submit Form
-            </button>
+            <div className="flex justify-center">
+              <button
+                className="mt-7 w-[200px] text-white bg-slate-500 border-0 py-2 px-6 focus:outline-none hover:bg-slate-600 rounded text-lg"
+                onSubmit={handleSubmit}
+              >
+                Submit Form
+              </button>
+            </div>
           </form>
         </div>
       </div>

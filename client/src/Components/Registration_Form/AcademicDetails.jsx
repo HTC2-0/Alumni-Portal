@@ -12,7 +12,7 @@ const AcademicDetails = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="roll_number"
             >
-              Programme
+              Programme<span className="text-red-500"> *</span>
             </label>
 
             <select
@@ -30,7 +30,7 @@ const AcademicDetails = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="roll_number"
             >
-              Branch
+              Branch <span className="text-red-500"> *</span>
             </label>
 
             <select
@@ -52,7 +52,7 @@ const AcademicDetails = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="roll_number"
             >
-              Year of Admission
+              Year of Admission <span className="text-red-500"> *</span>
             </label>
 
             <select
@@ -84,7 +84,7 @@ const AcademicDetails = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="roll_number"
             >
-              Year of Passing
+              Year of Passing <span className="text-red-500"> *</span>
             </label>
 
             <select

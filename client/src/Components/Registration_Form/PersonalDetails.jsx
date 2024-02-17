@@ -12,7 +12,7 @@ const PersonalDetails = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="name"
             >
-              Name
+              Name <span className="text-red-500"> *</span>
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -27,7 +27,7 @@ const PersonalDetails = () => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="roll_number"
             >
-              Roll Number
+              Roll Number<span className="text-red-500"> *</span>
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
