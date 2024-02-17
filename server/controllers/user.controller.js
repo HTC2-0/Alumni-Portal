@@ -1,66 +1,96 @@
-import User from '../models/user.model.js';
-import AppError from '../utils/appError.js';
-import asyncHandler from '../middlewares/asyncHandler.middleware.js';
+import User from "../models/user.model.js";
+import AppError from "../utils/appError.js";
+import asyncHandler from "../middlewares/asyncHandler.middleware.js";
 // import jwt from jsonwebtoken
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 const cookieOptions = {
-  secure: process.env.NODE_ENVc === 'production' ? true : false,
+  secure: process.env.NODE_ENVc === "production" ? true : false,
   maxAge: 7 * 24 * 60 * 60 * 1000,
   httpOnly: true,
 };
 
 export const registerUser = asyncHandler(async (req, res, next) => {
-  const { fullName, rollNumber, yearOfPassing, collegeEmail, personalEmail, LinkedIn, currentLocated, branch, programme, contactNumber, password } = req.body;
+  const {
+    fullName,
+    rollNumber,
+    yearOfPassing,
+    collegeEmail,
+    personalEmail,
+    LinkedIn,
+    currentLocated,
+    branch,
+    programme,
+    contactNumber,
+    password,
+  } = req.body;
 
-  if (!fullName || !collegeEmail || !yearOfPassing || !LinkedIn || !rollNumber || !currentLocated || !branch || !programme || !password || !rollNumber) {
-    return next(new AppError('All fields are required', 400));
+  if (
+    !fullName ||
+    !collegeEmail ||
+    !yearOfPassing ||
+    !LinkedIn ||
+    !rollNumber ||
+    !currentLocated ||
+    !branch ||
+    !programme ||
+    !password ||
+    !rollNumber
+  ) {
+    return next(new AppError("All fields are required", 400));
   }
 
   const userExists = await User.findOne({ collegeEmail });
 
   if (userExists) {
-    return next(new AppError('Email already exists', 400));
+    return next(new AppError("Email already exists", 400));
   }
 
   const user = await User.create({
     fullName,
     rollNumber,
-    programme,
     branch,
     collegeEmail,
     yearOfPassing,
     contactNumber,
     LinkedIn,
+    collegeEmail,
     personalEmail,
     currentLocated,
+    workingStatus,
+    currentlyWorkingAt,
     password,
+    avatar: {
+      public_id: collegeEmail,
+      secure_url:
+        "https://res.cloudinary.com/du9jzqlpt/image/upload/v1674647316/avatar_drzgxv.jpg",
+    },
   });
 
   if (!user) {
     return next(
-      new AppError('User registration failed, please try again later', 400)
+      new AppError("User registration failed, please try again later", 400)
     );
   }
 
   await user.save();
 
-    const token = jwt.sign(
-      {id: user._id, email},
-      'shhhh', // process.env.jwtsecret
-      {
-        expiresIn: "2h"
-      }
-    );
-
-    user.token = token
+  // const token = await user.generateJWTToken();
 
   user.password = undefined;
 
-  res.cookie('token', token, cookieOptions);
+  const token = jwt.sign(
+    { id: user._id, email },
+    "shhhh", // process.env.jwtsecret
+    {
+      expiresIn: "2h",
+    }
+  );
+
+  user.token = token;
 
   res.status(201).json({
     success: true,
-    message: 'User registered successfully',
+    message: "User registered successfully",
     user,
   });
 });
@@ -71,16 +101,19 @@ export const loginUser = asyncHandler(async (req, res, next) => {
 
   // Check if the data is there or not, if not throw error message
   if (!collegeEmail || !password) {
-    return next(new AppError('collgeEmail and Password are required', 400));
+    return next(new AppError("collgeEmail and Password are required", 400));
   }
 
   // Finding the user with the sent email
-  const user = await User.findOne({ email }).select('+password');
+  const user = await User.findOne({ email }).select("+password");
 
   // If no user or sent password do not match then send generic response
   if (!(user && (await user.comparePassword(password)))) {
     return next(
-      new AppError('collegeEmail or Password do not match or user does not exist', 401)
+      new AppError(
+        "collegeEmail or Password do not match or user does not exist",
+        401
+      )
     );
   }
 
@@ -91,12 +124,12 @@ export const loginUser = asyncHandler(async (req, res, next) => {
   user.password = undefined;
 
   // Setting the token in the cookie with name token along with cookieOptions
-  res.cookie('token', token, cookieOptions);
+  res.cookie("token", token, cookieOptions);
 
   // If all good send the response to the frontend
   res.status(200).json({
     success: true,
-    message: 'User logged in successfully',
+    message: "User logged in successfully",
     user,
   });
 });
