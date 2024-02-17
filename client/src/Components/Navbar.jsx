@@ -11,7 +11,7 @@ const Navbar = () => {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img src={College} className="h-16 " alt="Flowbite Logo" />
-            <span className="self-center text-3xl font-semibold whitespace-nowrap">
+            <span className="self-center text-lg font-bold uppercase tracking-wider">
               Alumni Portal
             </span>
           </Link>
