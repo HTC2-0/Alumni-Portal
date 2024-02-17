@@ -100,11 +100,16 @@ export const loginUser = asyncHandler(async (req, res, next) => {
   });
 });
 
-export const data = asyncHandler(async(req,res,next) =>{
-  try{
-    const users = await User.find({}, 'fullName collegeEmail LinkedIn currentlyWorkingAt currentLocated')
-  }catch(error){
+// import asyncHandler from 'express-async-handler';
+// import User from '../models/User'; // Assuming User model is defined in a separate file
+
+export const data = asyncHandler(async (req, res, next) => {
+  try {
+    const users = await User.find({}, 'fullName collegeEmail LinkedIn currentlyWorkingAt currentLocated');
+    res.json(users); // Assuming you want to send the retrieved users as JSON response
+  } catch (error) {
     console.error('Error retrieving data from database:', error);
     res.status(500).send('Error retrieving data from database');
   }
 });
+
