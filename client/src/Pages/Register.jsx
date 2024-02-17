@@ -11,7 +11,7 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center items-center mt-[5rem]">
+      <div className="flex justify-center items-center mt-[8rem] mb-[1rem]">
         <div className="w-full max-w-4xl">
           <form className="bg-[#f8f9fa] shadow-lg border rounded-lg px-8 pt-6 pb-8 mb-4">
             <h1 className="text-4xl text-center font-bold text-slate-600 mb-10">
