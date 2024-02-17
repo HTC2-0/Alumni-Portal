@@ -5,7 +5,7 @@ const HomeInfo = () => {
   return (
     <div className="w-full h-[40rem] p-5 flex justify-center items-center max-md:flex-col">
       <div className="w-[50%] h-full max-md:w-full max-md:h-[40%] flex flex-col gap-5 items-center justify-center">
-      <img src={Director} className="h-96 w-96 max-md:h-40 max-md:w-40 rounded-full mx-auto" />
+      <img src={Director} className="h-96 w-96 max-md:h-40 max-md:w-40 rounded-full mx-auto shadow-lg" />
       <h2 className="text-lg text-gray-900 font-semibold tracking-wider">Director, NK Padhy</h2>
       </div>
       <div className="w-[50%] h-[80%] max-md:w-full max-md:h-[60%]  flex justify-center items-center bg-gray-100 rounded-xl shadow-xl">
