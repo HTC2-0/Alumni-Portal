@@ -4,7 +4,6 @@ import Gallary from "./Pages/Gallary.jsx";
 import Events from "./Pages/Events.jsx";
 import SignUP from "./Pages/SignUp.jsx";
 import SignIn from "./Pages/SignIn.jsx";
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
