@@ -1,7 +1,8 @@
 import User from '../models/user.model.js';
 import AppError from '../utils/appError.js';
 import asyncHandler from '../middlewares/asyncHandler.middleware.js';
-
+// import jwt from jsonwebtoken
+import jwt from 'jsonwebtoken';
 const cookieOptions = {
     secure: process.env.NODE_ENVc === 'production' ? true : false,
     maxAge: 7 * 24 * 60 * 60 * 1000,
@@ -23,8 +24,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
 
     const user = await User.create({
         fullName,
-        rollNumber,
-        programme,
+        rollNumber, 
         branch,
         collegeEmail,
         yearOfPassing,
@@ -37,7 +37,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
         currentlyWorkingAt,
         password,
         avatar: {
-            public_id: email,
+            public_id: collegeEmail,
             secure_url:
               'https://res.cloudinary.com/du9jzqlpt/image/upload/v1674647316/avatar_drzgxv.jpg',
           },
@@ -76,7 +76,15 @@ export const registerUser = asyncHandler(async (req, res, next) => {
 
     await user.save();
 
-    const token = await user.generateJWTToken();
+    const token = jwt.sign(
+      {id: user._id, email},
+      'shhhh', // process.env.jwtsecret
+      {
+        expiresIn: "2h"
+      }
+    );
+
+    user.token = token
 
     user.password = undefined;
 

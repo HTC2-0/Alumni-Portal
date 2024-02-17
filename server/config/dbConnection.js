@@ -1,4 +1,4 @@
-import mongoose, { connect } from "mongoose";
+import mongoose from "mongoose";
 
 mongoose.set("strictQuery", false);
 
@@ -8,7 +8,7 @@ const connectToDB = async () => {
             process.env.MONGO_URI
         );
         if (connection) {
-            console.log(`Connected to MongoDB: ${connection, host}`);
+            console.log(`Connected to MongoDB: ${connection.host}`);
         }
     } catch (error) {
         console.log(error);
