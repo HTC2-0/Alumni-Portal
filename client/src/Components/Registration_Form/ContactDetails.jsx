@@ -84,6 +84,19 @@ const ContactDetails = () => {
             type="text"
             placeholder="Personal Email Address"
           />
+          <label
+            htmlFor="address"
+            className="block text-gray-700 text-sm font-bold mb-2"
+          >
+            Current Location
+          </label>
+
+          <input
+            className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="location"
+            type="text"
+            placeholder="Personal Email Address"
+          />
         </div>
       </div>
     </>
