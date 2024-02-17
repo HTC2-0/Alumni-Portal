@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RiRadioButtonFill } from 'react-icons/ri';
-import Img1 from "../assets/Kota1.jpg"
-import Img2 from "../assets/Kota2.jpg"
-import Img3 from "../assets/Kota3.jpg"
+import Img1 from "../assets/k1.webp"
+import Img2 from "../assets/k2.png"
+import Img3 from "../assets/k3.png"
+import Img4 from "../assets/k4.png"
 
 const GalleryCarousel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +26,7 @@ const GalleryCarousel = ({ slides }) => {
   };
 
   return (
-    <div className='w-full h-full m-auto py-16 px-4 relative group'>
+    <div className='w-[95%] h-[95%] m-auto py-16 px-4 relative group'>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
@@ -56,10 +57,10 @@ const GalleryCarousel = ({ slides }) => {
 };
 
 const slides = [
-  { url: {Img1} }, // Use imported images here
-  { url: {Img2} },
-  { url: {Img3},}
-  // Add other images as needed
+  { url: Img1 },
+  { url: Img2 },
+  { url: Img3 },
+  { url: Img4 },
 ];
 
 export default () => <GalleryCarousel slides={slides} />;
