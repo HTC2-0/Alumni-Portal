@@ -11,4 +11,4 @@ const Gallary = () => {
   )
 }
 
-export default Gallary
+export default Gallary;

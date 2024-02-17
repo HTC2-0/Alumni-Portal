@@ -11,4 +11,4 @@ const Alumni = () => {
   )
 }
 
-export default Alumni
+export default Alumni;
