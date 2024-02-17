@@ -17,9 +17,9 @@ const Register = () => {
             <h1 className="text-4xl text-center font-bold text-slate-600 mb-10">
               Registration Form{" "}
             </h1>
-            <PersonalDetails></PersonalDetails>
-            <AcademicDetails></AcademicDetails>
-            <ContactDetails></ContactDetails>
+            <PersonalDetails />
+            <AcademicDetails />
+            <ContactDetails />
 
             <button
               className="mt-7 w-[200px] text-white bg-slate-500 border-0 py-2 px-6 focus:outline-none hover:bg-slate-600 rounded text-lg"
