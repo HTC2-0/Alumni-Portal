@@ -1,6 +1,6 @@
 import Home from "./Pages/Home.jsx";
 import Alumni from "./Pages/Alumni.jsx";
-import Gallary from "./Pages/Gallary.jsx";
+import Gallery from "./Pages/Gallery.jsx";
 import Events from "./Pages/Events.jsx";
 import Register from "./Pages/Register.jsx";
 import LogIn from "./Pages/LogIn.jsx";
@@ -15,7 +15,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/alumni" element={<Alumni />} />
-          <Route path="/gallery" element={<Gallary />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/events" element={<Events />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<LogIn />} />
