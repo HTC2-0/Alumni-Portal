@@ -1,8 +1,6 @@
 import express from "express";
 import { config } from "dotenv";
-import morgan from "morgan";
 import cookieParser from "cookie-parser";
-import cloudinary from "cloudinary"
 config();
 import cors from 'cors';
 
@@ -17,7 +15,6 @@ app.use(
     credentials: true,
   })
 );
-app.use(morgan('dev'));
 app.use(cookieParser());
 
 // Server Status Check Route
