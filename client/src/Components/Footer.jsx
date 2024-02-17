@@ -1,63 +1,32 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <footer className="text-gray-600 body-font bg-gray-200">
+    <footer className="text-gray-600 body-font bg-gray-300 shadow-md">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
+            <nav className="list-none mb-10 h-full flex flex-col justify-between">
+              <Link to="https://www.iiitkota.ac.in" target="_blank" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">IIIT Kota Website</Link>
+              <Link to="https://tpcell.iiitkota.ac.in/" target="_blank" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">Training and Placement Cell</Link>
+              <Link to="https://iiitkota.ac.in/faculty" target="_blank" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">Faculty in Charge</Link>
+              <Link to="https://iiitkota.ac.in/tender-invitations" target="_blank" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">Tender Invitations</Link>
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
+            <nav className="list-none mb-10 h-full flex flex-col justify-between">
+              <Link to="https://iiitkota.ac.in/holidays" target="_blank" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">Holidays</Link>            
+              <Link to="https://iiitkota.ac.in/recruitment" target="_blank" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">Recruitments</Link>            
+              <Link to="https://iiitkota.ac.in/it-infrastructure" target="_blank" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">IT Infrastructure</Link>            
+              <Link to="https://iiitkota.ac.in/rti" target="_blank" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">RTI</Link>            
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
-            </h2>
-            <nav className="list-none mb-10">
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li className="pb-3">
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
+            <nav className="list-none mb-10 h-full flex flex-col justify-between">
+              <Link to="#" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">First Link</Link>
+              <Link to="#" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">Second Link</Link>
+              <Link to="#" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">Third Link</Link>
+              <Link to="#" className="text-gray-600 hover:text-gray-800 mb-3 transition-all transform hover:translate-x-2">Fourth Link</Link>
             </nav>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
