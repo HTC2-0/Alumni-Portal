@@ -1,11 +1,5 @@
-import React from 'react'
-
 const Gallary = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <></>;
+};
 
-export default Gallary
+export default Gallary;

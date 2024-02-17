@@ -1,11 +1,5 @@
-import React from 'react'
-
 const Alumni = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <></>;
+};
 
-export default Alumni
+export default Alumni;
