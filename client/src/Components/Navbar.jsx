@@ -3,7 +3,7 @@ import College from "../assets/Collge.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white shadow-lg top-0 sticky">
+    <nav className="bg-white shadow-lg top-0 sticky z-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between h-16 items-center">
           <div>
