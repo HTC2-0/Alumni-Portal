@@ -5,15 +5,37 @@ import AcademicDetails from "../Components/Registration_Form/AcademicDetails";
 import PersonalDetails from "../Components/Registration_Form/PersonalDetails";
 import ContactDetails from "../Components/Registration_Form/ContactDetails";
 
-const handleSubmit = () => {};
+import { useState } from "react";
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+};
 
 const Register = () => {
+  const [details, setDetails] = useState({
+    fullName: "",
+    rollNumber: "",
+    programme: "",
+    branch: "",
+    collegeEmail: "",
+    yearOfPassing: "",
+    contactNumber: "",
+    LinkedIn: "",
+    personalEmail: "",
+    officialEmail: "",
+    currentLocated: "",
+    password: "",
+  });
+
   return (
     <>
       <Navbar />
       <div className="flex justify-center items-center mt-[8rem] mb-[1rem]">
         <div className="w-full max-w-4xl">
-          <form className="bg-[#f8f9fa] shadow-lg border rounded-lg px-8 pt-6 pb-8 mb-4">
+          <form
+            onSubmit={handleSubmit}
+            className="bg-[#f8f9fa] shadow-lg border rounded-lg px-8 pt-6 pb-8 mb-4"
+          >
             <h1 className="text-4xl text-center font-bold text-slate-600 mb-10">
               Registration Form{" "}
             </h1>

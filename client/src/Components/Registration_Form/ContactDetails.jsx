@@ -70,33 +70,36 @@ const ContactDetails = () => {
           </div>
         </div>
 
-        <div className="flex flex-row justify-between gap-3">
+        <div className="flex flex-row gap-3 justify-between">
           <div className="mb-4 w-1/2">
             <label
+              htmlFor="address"
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="company"
             >
-              Currently Working At<span className="text-red-500"> *</span>
+              Current Location
             </label>
+
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="company "
+              id="location"
               type="text"
-              placeholder="Eg. Google"
+              placeholder="Personal Email Address"
             />
           </div>
+
           <div className="mb-4 w-1/2">
             <label
+              htmlFor="password"
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="address"
             >
-              Currently Located At<span className="text-red-500"> *</span>
+              Password
             </label>
+
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="address"
-              type="text"
-              placeholder="Eg. Gurugram, Haryana"
+              id="passsword"
+              type="password"
+              placeholder="Password"
             />
           </div>
         </div>
