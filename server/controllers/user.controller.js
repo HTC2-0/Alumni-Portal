@@ -10,9 +10,9 @@ const cookieOptions = {
 };
 
 export const registerUser = asyncHandler(async (req, res, next) => {
-  const { fullName, rollNumber, yearOfPassing, collegeEmail, personalEmail, LinkedIn, currentLocated, branch, programme, contactNumber, password } = req.body;
+  const { fullName, rollNumber, yearOfPassing, collegeEmail, personalEmail, LinkedIn, currentLocated, branch, programme, contactNumber, password, workingStatus } = req.body;
 
-  if (!fullName || !collegeEmail || !yearOfPassing || !LinkedIn || !rollNumber || !currentLocated || !branch || !programme || !password || !rollNumber) {
+  if (!fullName || !collegeEmail || !yearOfPassing || !LinkedIn || !rollNumber || !currentLocated || !branch || !programme || !password || !rollNumber || !workingStatus) {
     return next(new AppError('All fields are required', 400));
   }
 
@@ -34,6 +34,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
     personalEmail,
     currentLocated,
     password,
+    workingStatus
   });
 
   if (!user) {
@@ -44,7 +45,13 @@ export const registerUser = asyncHandler(async (req, res, next) => {
 
   await user.save();
 
-  const token = await user.generateJWTToken();
+  const token = jwt.sign(
+    {id: user._id, email},
+    'shhhh', // process.env.jwtsecret
+    {
+      expiresIn: "2h"
+    }
+  );
 
   user.password = undefined;
 
@@ -92,3 +99,17 @@ export const loginUser = asyncHandler(async (req, res, next) => {
     user,
   });
 });
+
+// import asyncHandler from 'express-async-handler';
+// import User from '../models/User'; // Assuming User model is defined in a separate file
+
+export const data = asyncHandler(async (req, res, next) => {
+  try {
+    const users = await User.find({}, 'fullName collegeEmail LinkedIn currentlyWorkingAt currentLocated');
+    res.json(users); // Assuming you want to send the retrieved users as JSON response
+  } catch (error) {
+    console.error('Error retrieving data from database:', error);
+    res.status(500).send('Error retrieving data from database');
+  }
+});
+

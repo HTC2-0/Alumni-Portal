@@ -9,7 +9,7 @@ const userSchema = new Schema(
       trim: true,
     },
     rollNumber: {
-      type: Number,
+      type: String,
       required: true,
       trim: true
     },
@@ -59,6 +59,10 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Password is required"]
     },
+    workingStatus:{
+        type:String,
+        required: true
+    }
 
   }, { timestamps: true }
 );
