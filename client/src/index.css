@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.titillium-web-bold {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
