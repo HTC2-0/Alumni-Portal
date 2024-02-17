@@ -4,11 +4,14 @@ import Gallary from "./Pages/Gallary.jsx";
 import Events from "./Pages/Events.jsx";
 import SignUP from "./Pages/SignUp.jsx";
 import SignIn from "./Pages/SignIn.jsx";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Profile from "./Pages/Profile.jsx";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
 
 const App = () => {
   return (
-    <Router>
+    <div>
+      <Router>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/alumni" element={<Alumni />} />
@@ -16,8 +19,10 @@ const App = () => {
         <Route path="/events" element={<Events />} />
         <Route path="/signup" element={<SignUP />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
-    </Router>
+      </Router>
+    </div>
   );
 };
 
