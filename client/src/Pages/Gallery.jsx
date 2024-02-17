@@ -6,8 +6,8 @@ const Gallery = () => {
   return (
     <div>
       <Navbar />
-      <div className='w-full h-[45rem] relative border border-black flex justify-center items-center'>
-        <div className='w-[90%] h-[75%] border border-black'>
+      <div className='w-full h-[45rem] relative mb-12 top-12 flex justify-center items-center'>
+        <div className='w-full h-full'>
           <GalleryCarousel />
         </div>
       </div>
