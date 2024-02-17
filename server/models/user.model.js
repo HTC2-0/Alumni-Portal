@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const userSchema = new Schema(
   {
@@ -35,10 +36,14 @@ const userSchema = new Schema(
       required: true
     },
     collegeEmail: {
-      type: String,
-      required: true,
-      trim: true,
-      lowercase: true
+        type : String,
+        required: [true, 'Email is required'],
+        unique: true,
+        lowercase: true,
+        match: [
+            /\b[A-Za-z0-9._%+-]+@iiitkota\.ac\.in\b/,
+            'Please fill college email id with iiitkota.ac.in domain',
+        ]
     },
     personalEmail: {
       type: String,
