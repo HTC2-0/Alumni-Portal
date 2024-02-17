@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeEvents = () => {
   return (
-    <div className="w-full h-[40rem] max-md:h-[60rem] flex gap-5 max-md:flex-col mb-10">
+    <div className="w-full h-[40rem] max-md:h-[60rem] flex gap-5 max-md:flex-col mb-10 mt-10">
       <div className="w-[50%] h-full max-md:w-full max-md:h-[50%] flex justify-center align-center">
         <div className="event-card relative h-full w-[80%] border bg-gray-100 rounded-lg overflow-scroll shadow-2xl mx-auto">
           <div className="p-8">
