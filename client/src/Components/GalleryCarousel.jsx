@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import Img1 from "../assets/k1.webp"
-import Img2 from "../assets/k2.png"
+import Img2 from "../assets/k2.webp"
 import Img3 from "../assets/k3.png"
-import Img4 from "../assets/k4.png"
+import Img4 from "../assets/k4.jpg"
 
 const GalleryCarousel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
