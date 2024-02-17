@@ -6,7 +6,6 @@ import SignUP from "./Pages/SignUp.jsx";
 import SignIn from "./Pages/SignIn.jsx";
 import Profile from "./Pages/Profile.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React from "react";
 
 const App = () => {
   return (

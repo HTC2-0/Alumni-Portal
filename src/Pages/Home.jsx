@@ -1,8 +1,7 @@
-import Navbar from '../Components/Navbar';
-import { Link } from 'react-router-dom'
-import Footer from '../Components/Footer';
-import HomeCarousel from '../Components/HomeCarousel';
-import React from 'react';
+import Navbar from "../Components/Navbar";
+import { Link } from "react-router-dom";
+import Footer from "../Components/Footer";
+import HomeCarousel from "../Components/HomeCarousel";
 
 const Home = () => {
   return (
@@ -13,7 +12,7 @@ const Home = () => {
       <Link to="/events">Events</Link>
       <Link to="/gallary">Gallery</Link>
       <Link to="/profile">Profile</Link>
-      <Footer /> 
+      <Footer />
     </div>
   );
 };
