@@ -11,9 +11,18 @@ const userSchema = new Schema(
         workingStatus: String,
         currentlyWorkingAt: String,
         currentLocated: String,
-        program: String,
+        programme: String,
         branch: String,
         contactNumber: String,
+        password:String,
+        avatar: {
+            public_id: {
+              type: String,
+            },
+            secure_url: {
+              type: String,
+            },
+          },
     }
 );
 
