@@ -3,29 +3,22 @@ import Director from "../assets/Padhi.jpg";
 
 const HomeInfo = () => {
   return (
-    <div className="w-full h-[40rem] border border-black p-5 flex max-md:flex-col">
-      <div className="w-[50%] h-full max-md:w-full max-md:h-[50%] border border-black flex items-center justify-center">
-        <img src={Director} className="h-[20rem] w-[20rem]" />
+    <div className="w-full h-[40rem] p-5 flex justify-center items-center max-md:flex-col">
+      <div className="w-[50%] h-full max-md:w-full max-md:h-[40%] flex flex-col gap-5 items-center justify-center">
+      <img src={Director} className="h-96 w-96 max-md:h-40 max-md:w-40 rounded-full mx-auto" />
+      <h2 className="text-lg text-gray-900 font-semibold tracking-wider">Director, NK Padhy</h2>
       </div>
-      <div className="w-[50%] h-full max-md:w-full max-md:h-[50%] border border-black flex justify-center items-center">
-        <p className="w-[80%] h-[80%] border border-black">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-          consectetur repudiandae animi saepe dolorum alias aliquid, rem totam
-          harum, placeat fugit tenetur consequatur aperiam inventore laudantium
-          deserunt? Modi eos excepturi illum illo possimus doloremque et
-          laudantium architecto! At ducimus eligendi voluptas illo minima quae
-          nam autem veniam natus ullam. Voluptatum quis, accusantium quod iusto
-          reprehenderit natus exercitationem quam enim fugiat suscipit
-          perspiciatis porro incidunt cumque eaque harum ab pariatur. Provident
-          earum modi saepe mollitia hic sequi ex in libero nisi id eos dicta
-          nemo aperiam voluptate explicabo sunt, animi ipsum sint, excepturi et
-          impedit, illo perspiciatis eveniet. Eius quo amet sequi recusandae
-          reprehenderit reiciendis dignissimos debitis voluptatibus voluptatem,
-          soluta id pariatur atque doloribus nulla repellat. Commodi, officia
-          repudiandae. Sequi dolore provident saepe quidem ab autem pariatur
-          unde, adipisci possimus aspernatur ducimus beatae dicta aliquid
-          maiores harum. Corrupti cumque blanditiis, est animi porro nulla
-          quisquam incidunt quidem voluptatum? Nihil, asperiores at?
+      <div className="w-[50%] h-[80%] max-md:w-full max-md:h-[60%]  flex justify-center items-center bg-gray-100 rounded-xl shadow-xl">
+        <p className="w-[80%] h-[80%] max-md:text-sm flex justify-center items-center text-xl font-semibold leading-relaxed tracking-wider text-gray-900">
+          It brings me immense pleasure to extend a warm welcome to each of you
+          to the official IIIT Kota Alumni Network website. As the Director, I
+          am honored to witness the growth and achievements of our alumni,
+          serving as a testament to the excellence fostered within our
+          institution. This platform serves as a bridge connecting past,
+          present, and future, fostering collaboration, camaraderie, and
+          continued growth. I encourage you to actively engage, share insights,
+          and strengthen the bonds that unite us as proud alumni of IIIT Kota.
+          Together, let us continue to elevate our alma mater's legacy.
         </p>
       </div>
     </div>
