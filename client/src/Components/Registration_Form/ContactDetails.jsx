@@ -70,33 +70,38 @@ const ContactDetails = () => {
           </div>
         </div>
 
-        <div className="flex flex-col justify-between">
-          <label
-            htmlFor="address"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Current Location
-          </label>
+        <div className="flex flex-row gap-3 justify-between">
+          <div className="mb-4 w-1/2">
+            <label
+              htmlFor="address"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+              Current Location
+            </label>
 
-          <input
-            className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="location"
-            type="text"
-            placeholder="Personal Email Address"
-          />
-          <label
-            htmlFor="address"
-            className="block text-gray-700 text-sm font-bold mb-2"
-          >
-            Current Location
-          </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="location"
+              type="text"
+              placeholder="Personal Email Address"
+            />
+          </div>
 
-          <input
-            className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="location"
-            type="text"
-            placeholder="Personal Email Address"
-          />
+          <div className="mb-4 w-1/2">
+            <label
+              htmlFor="password"
+              className="block text-gray-700 text-sm font-bold mb-2"
+            >
+              Password
+            </label>
+
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="passsword"
+              type="password"
+              placeholder="Password"
+            />
+          </div>
         </div>
       </div>
     </>
