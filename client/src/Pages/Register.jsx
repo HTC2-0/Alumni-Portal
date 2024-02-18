@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 import { useState } from "react";
 
+// Register Page
+
 const Register = () => {
   const navigate = useNavigate();
 

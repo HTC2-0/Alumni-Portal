@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
-import { RiRadioButtonFill } from 'react-icons/ri'; 
+import { useState, useEffect } from "react";
+import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
+import { RiRadioButtonFill } from "react-icons/ri";
 import K1 from "../assets/k1.webp";
 import K2 from "../assets/k2.webp";
 import K3 from "../assets/k3.png";
@@ -39,7 +39,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 5000); // Change slide every 5 seconds (5000 milliseconds)
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -49,25 +49,27 @@ function App() {
   };
 
   return (
-    <div className='w-full h-[45rem] m-auto py-16 px-4 relative top-10 mb-5 group swiper'>
+    <div className="w-full h-[45rem] m-auto py-16 px-4 relative top-10 mb-5 group swiper">
       <div
-        style={{ backgroundImage: `url(${slides[currentIndex].src})` }} // Fixed src access
-        className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
+        style={{ backgroundImage: `url(${slides[currentIndex].src})` }}
+        className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
       ></div>
-      {/* Left Arrow */}
-      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <BsChevronCompactLeft onClick={prevSlide} size={30} />
       </div>
-      {/* Right Arrow */}
-      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+
+      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
-      <div className='flex top-4 justify-center py-2'>
+      <div className="flex top-4 justify-center py-2">
         {slides.map((slide, slideIndex) => (
           <div
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
-            className={`text-2xl cursor-pointer ${slideIndex === currentIndex ? 'text-blue-500' : 'text-gray-400'}`} // Applied conditional styling
+            className={`text-2xl cursor-pointer ${
+              slideIndex === currentIndex ? "text-blue-500" : "text-gray-400"
+            }`} //
           >
             <RiRadioButtonFill />
           </div>

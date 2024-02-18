@@ -2,6 +2,8 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import GalleryCarousel from '../Components/GalleryCarousel'
 
+// Gallery Page
+
 const Gallery = () => {
   return (
     <div>

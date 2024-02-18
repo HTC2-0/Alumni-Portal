@@ -2,6 +2,8 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import AlumniCard from "../Components/AlumniCard";
 
+// Alumni Page
+
 const Alumni = () => {
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>

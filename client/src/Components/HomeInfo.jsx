@@ -1,4 +1,3 @@
-import React from "react";
 import Director from "../assets/Padhi.jpg";
 
 const HomeInfo = () => {
@@ -19,9 +18,9 @@ const HomeInfo = () => {
           to the official IIIT Kota Alumni Network website. As the Director, I
           am honored to witness the growth and achievements of our alumni,
           serving as a testament to the excellence fostered within our
-          institution. I encourage you to actively engage, share insights,
-          and strengthen the bonds that unite us as proud alumni of IIIT Kota.
-          Together, let us continue to elevate our alma mater's legacy.
+          institution. I encourage you to actively engage, share insights, and
+          strengthen the bonds that unite us as proud alumni of IIIT Kota.
+          Together, let us continue to elevate our alma matters legacy.
         </p>
       </div>
     </div>

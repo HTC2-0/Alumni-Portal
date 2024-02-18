@@ -5,6 +5,8 @@ import HomeCarousel from "../Components/HomeCarousel";
 import HomeInfo from "../Components/HomeInfo";
 import HomeFeaturedAlumni from "../Components/HomeFeaturedAlumni";
 
+// Home Page
+
 const Home = () => {
   return (
     <div>

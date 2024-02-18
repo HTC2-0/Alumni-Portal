@@ -1,10 +1,12 @@
-import React from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import EditButton from "../Components/EditButton";
 import Badge from "../assets/badge.png";
-import K4 from "../assets/k4.jpg"
+import K4 from "../assets/k4.jpg";
 import { Link } from "react-router-dom";
+
+// Profile Page
+
 
 const Profile = () => {
   const getPartOfDay = () => {
@@ -43,7 +45,7 @@ const Profile = () => {
         </div>
         <div className="w-full h-[35rem] flex max-sm:flex-col-reverse">
           <div className="w-[50%] h-full max-sm:w-full max-sm:h-[50%] flex justify-center items-center">
-            <img src = {K4} style={{width : '90%'}} />
+            <img src={K4} style={{ width: "90%" }} />
           </div>
           <div className="w-[50%] h-full max-sm:w-full max-sm:h-[50%] rounded-lg overflow-hidden bg-white flex justify-center items-center max-sm:p-10">
             <div>
