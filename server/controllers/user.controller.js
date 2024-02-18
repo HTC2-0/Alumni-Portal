@@ -58,6 +58,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
     return next(new AppError("Invalid personal email", 403));
   }
 
+  // check collegeEmail exist or not 
   const userExists = await User.findOne({ collegeEmail });
 
   if (userExists) {

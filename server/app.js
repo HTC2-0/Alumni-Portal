@@ -34,6 +34,8 @@ import userRoutes from "./routes/user.routes.js";
 app.use("/api/v1/user", userRoutes);
 // console.log("Hello");
 
+
+// this is for any random url
 app.all("*", (req, res) => {
   res.status(404).send("OOPS! 404 page not found");
 });

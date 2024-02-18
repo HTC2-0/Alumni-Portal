@@ -1,3 +1,4 @@
+// This is the utils of an any error 
 class AppError extends Error {
     constructor(message, statusCode) {
         super(message);
