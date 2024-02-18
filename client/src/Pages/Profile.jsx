@@ -67,7 +67,7 @@ const Profile = () => {
                 to="https://www.linkedin.com/in/aaryan-anil-kumar-singh-568789250/"
                 target="_blank"
               >
-                LinkedIn Profile :{" "}
+                <strong>LinkedIn Profile:</strong>{" "}
                 <span className="text-blue-500 hover:underline">
                   www.linkedin.com/in/aaryan-anil-kumar-singh-568789250/
                 </span>
