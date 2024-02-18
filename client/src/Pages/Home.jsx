@@ -3,6 +3,7 @@ import Footer from "../Components/Footer";
 import HomeEvents from "../Components/HomeEvents";
 import HomeCarousel from "../Components/HomeCarousel";
 import HomeInfo from "../Components/HomeInfo";
+import HomeFeaturedAlumni from "../Components/HomeFeaturedAlumni";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <HomeCarousel />
       <HomeInfo />
       <HomeEvents />
+      <HomeFeaturedAlumni />
       <Footer />
     </div>
   );

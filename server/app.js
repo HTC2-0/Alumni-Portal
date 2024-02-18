@@ -6,6 +6,7 @@ import cors from "cors";
 
 const app = express();
 
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Third-Party
@@ -16,6 +17,12 @@ app.use(
   })
 );
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: [process.env.FRONTEND_URL],
+    credentials: true,
+  })
+);
 
 // Server Status Check Route
 app.get("/ping", (_req, res) => {

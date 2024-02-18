@@ -3,7 +3,6 @@ import Navbar from "../Components/Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
 
 import { useState } from "react";
 
