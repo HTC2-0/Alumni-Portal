@@ -10,9 +10,9 @@ const cookieOptions = {
 };
 
 export const registerUser = asyncHandler(async (req, res, next) => {
-  const { fullName, rollNumber, yearOfPassing, collegeEmail, personalEmail, LinkedIn, currentLocated, branch, programme, contactNumber, password, workingStatus } = req.body;
+  const { fullName, rollNumber, yearOfAdmission, yearOfPassing, collegeEmail, personalEmail, LinkedIn, currentLocated, branch, programme, contactNumber, password, workingStatus } = req.body;
 
-  if (!fullName || !collegeEmail || !yearOfPassing || !LinkedIn || !rollNumber || !currentLocated || !branch || !programme || !password || !rollNumber || !workingStatus) {
+  if (!fullName || !collegeEmail || !yearOfAdmission || !yearOfPassing || !LinkedIn || !rollNumber || !currentLocated || !branch || !programme || !password || !rollNumber || !workingStatus) {
     return next(new AppError('All fields are required', 400));
   }
 
@@ -28,6 +28,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
     programme,
     branch,
     collegeEmail,
+    yearOfAdmission,
     yearOfPassing,
     contactNumber,
     LinkedIn,

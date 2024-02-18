@@ -26,6 +26,11 @@ const userSchema = new Schema(
       required: true,
       trim: true
     },
+    yearOfAdmission:{
+        type: Number,
+      required: true,
+      trim: true
+    },
     contactNumber: {
       type: Number,
       required: true,
