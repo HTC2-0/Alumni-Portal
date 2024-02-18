@@ -34,7 +34,7 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="w-full h-[35rem] max-sm:h-[48rem] relative top-[6rem] flex flex-col">
+      <div className="w-full h-[35rem] relative top-[6rem] mb-[10rem] flex flex-col">
         <h1 className="text-4xl max-sm:text-2xl text-center mt-8 mb-5">
           Good {getPartOfDay()}, Aaryan Anil Kumar Singh!
         </h1>
