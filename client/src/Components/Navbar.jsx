@@ -13,7 +13,7 @@ const Navbar = () => {
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <img src={College} className="h-16 " alt="Flowbite Logo" />
-            <span className="self-center text-lg font-bold uppercase tracking-wider">
+            <span className="self-center text-lg text-gray-900 font-bold uppercase tracking-wider">
               Alumni Portal
             </span>
           </Link>
@@ -42,7 +42,11 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/signin"
-                  className="block py-2 px-3 text-xl text-gray-700 bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0"
+                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${
+                    location.pathname === "/signin"
+                      ? "text-blue-700"
+                      : "text-gray-700"
+                  }`}
                 >
                   <Link to="/signin">Home</Link>
                 </Link>
