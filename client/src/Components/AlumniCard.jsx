@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import { Link } from "react-router-dom"; // Assuming you are using React Router
+import { Link } from "react-router-dom";
+
+// Alumni card component
 
 const AlumniCard = () => {
   const [hovered, setHovered] = useState(false);
@@ -28,10 +30,21 @@ const AlumniCard = () => {
       </div>
       {hovered && (
         <div className="p-6 pt-0 flex">
-          <Link to="https://www.github.com/coderkaushik" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="mr-4" style={{ fontSize: "1.5rem", cursor: "pointer" }} />
+          <Link
+            to="https://www.github.com/coderkaushik"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub
+              className="mr-4"
+              style={{ fontSize: "1.5rem", cursor: "pointer" }}
+            />
           </Link>
-          <Link to="https://www.linkedin.com/in/hiteshwarkaushik" target="_blank" rel="noopener noreferrer">
+          <Link
+            to="https://www.linkedin.com/in/hiteshwarkaushik"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaLinkedin style={{ fontSize: "1.5rem", cursor: "pointer" }} />
           </Link>
         </div>

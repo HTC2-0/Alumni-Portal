@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RiRadioButtonFill } from 'react-icons/ri';
 import K1 from "../assets/k1.webp";
 import K2 from "../assets/k2.webp";
 import K3 from "../assets/k3.png";
 import K4 from "../assets/k4.jpg";
+
+// Gallery Carousel component
+
 
 const GalleryCarousel = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

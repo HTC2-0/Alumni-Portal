@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import College from "../assets/Collge.png"
 
+
+// Footer component
 const Footer = () => {
   return (
     <footer
