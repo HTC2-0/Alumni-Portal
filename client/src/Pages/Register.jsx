@@ -2,7 +2,7 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -427,14 +427,18 @@ const Register = () => {
                     }
                     required
                   />
-                 
                 </div>
               </div>
             </div>
 
-            <button className="mt-7 w-[200px] text-white bg-slate-500 border-0 py-2 px-6 focus:outline-none hover:bg-slate-600 rounded text-lg">
-              Submit Form
-            </button>
+            <div className="w-full flex flex-row justify-between">
+              <button className="mt-7 w-[200px] text-white bg-slate-500 border-0 py-2 px-6 focus:outline-none hover:bg-slate-600 rounded text-lg">
+                Submit Form
+              </button>
+              <button className="mt-7 w-[200px] text-white bg-slate-500 border-0 py-2 px-6 focus:outline-none hover:bg-slate-600 rounded text-lg">
+                <Link to="/signin">Sign In</Link>
+              </button>
+            </div>
           </form>
         </div>
       </div>
