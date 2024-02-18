@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-
+import { Link } from "react-router-dom";
 const SignInForm = () => {
   return (
     <>
@@ -51,7 +51,7 @@ const SignInForm = () => {
             <p>
               Not registered yet?{" "}
               <span className="hover:text-blue-700">
-                <a href="/register">Register now!</a>
+                <Link to="/register">Register</Link>
               </span>
             </p>
           </div>
