@@ -1,6 +1,8 @@
 import User from "../models/user.model.js";
 import AppError from "../utils/appError.js";
 import asyncHandler from "../middlewares/asyncHandler.middleware.js";
+import { comparePassword } from "../utils/passwordUtils.js";
+import validator from "validator";
 // import jwt from jsonwebtoken
 import jwt from "jsonwebtoken";
 // import comparePassword from './models'
@@ -9,6 +11,8 @@ const cookieOptions = {
   maxAge: 7 * 24 * 60 * 60 * 1000,
   httpOnly: true,
 };
+
+import bcrypt from "bcryptjs"; // Import bcrypt library
 
 export const registerUser = asyncHandler(async (req, res, next) => {
   const {
@@ -44,11 +48,24 @@ export const registerUser = asyncHandler(async (req, res, next) => {
     return next(new AppError("All fields are required", 400));
   }
 
+  // Validate college email
+  if (!validator.isEmail(collegeEmail)) {
+    return next(new AppError("Invalid college email", 402));
+  }
+
+  // Validate personal email if it exists
+  if (personalEmail && !validator.isEmail(personalEmail)) {
+    return next(new AppError("Invalid personal email", 403));
+  }
+
   const userExists = await User.findOne({ collegeEmail });
 
   if (userExists) {
-    return next(new AppError("Email already exists", 400));
+    return next(new AppError("Email already exists", 405));
   }
+
+  // Hash the password
+  const hashedPassword = await bcrypt.hash(password, 10); // 10 is the salt rounds
 
   const user = await User.create({
     fullName,
@@ -62,20 +79,18 @@ export const registerUser = asyncHandler(async (req, res, next) => {
     LinkedIn,
     personalEmail,
     currentLocated,
-    password,
+    password: hashedPassword, // Use the hashed password
     workingStatus,
   });
 
   if (!user) {
     return next(
-      new AppError("User registration failed, please try again later", 400)
+      new AppError("User registration failed, please try again later", 406)
     );
   }
 
-  await user.save();
-
   const token = jwt.sign(
-    { id: user._id, collegeEmail },
+    { id: user._id, email: user.collegeEmail }, // Use user.collegeEmail for the email
     "shhhh", // process.env.jwtsecret
     {
       expiresIn: "2h",
@@ -89,7 +104,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
   res.status(201).json({
     success: true,
     message: "User registered successfully",
-    user: user,
+    user,
   });
 });
 
@@ -99,14 +114,15 @@ export const loginUser = asyncHandler(async (req, res, next) => {
 
   // Check if the data is there or not, if not throw error message
   if (!collegeEmail || !password) {
-    return next(new AppError("collgeEmail and Password are required", 400));
+    return next(new AppError("collgeEmail and Password are required", 407));
   }
 
   // Finding the user with the sent email
   const user = await User.findOne({ collegeEmail }).select("+password");
+  // console.log("Hello");
 
   // If no user or sent password do not match then send generic response
-  if (!(user && (await user.comparePassword(password)))) {
+  if (!(user && (await comparePassword(password, user.password)))) {
     return next(
       new AppError(
         "collegeEmail or Password do not match or user does not exist",
@@ -117,7 +133,7 @@ export const loginUser = asyncHandler(async (req, res, next) => {
 
   // Generating a JWT token
   const token = jwt.sign(
-    { id: user._id, email },
+    { id: user._id, collegeEmail },
     "shhhh", // process.env.jwtsecret
     {
       expiresIn: "2h",

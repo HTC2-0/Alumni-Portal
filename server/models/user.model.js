@@ -1,5 +1,6 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcryptjs";
+import { comparePassword } from "../utils/passwordUtils.js";
 
 const userSchema = new Schema(
   {
@@ -71,6 +72,13 @@ const userSchema = new Schema(
   },
   { timestamps: true }
 );
+
+userSchema.methods = {
+  // method which will help us compare plain password with hashed password and returns true or false
+  // comparePassword: async function (plainPassword) {
+  //   return await bcrypt.compare(plainPassword, this.password);
+  // },
+};
 
 const User = model("User", userSchema);
 
