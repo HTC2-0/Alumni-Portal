@@ -19,9 +19,7 @@ const HomeInfo = () => {
           to the official IIIT Kota Alumni Network website. As the Director, I
           am honored to witness the growth and achievements of our alumni,
           serving as a testament to the excellence fostered within our
-          institution. This platform serves as a bridge connecting past,
-          present, and future, fostering collaboration, camaraderie, and
-          continued growth. I encourage you to actively engage, share insights,
+          institution. I encourage you to actively engage, share insights,
           and strengthen the bonds that unite us as proud alumni of IIIT Kota.
           Together, let us continue to elevate our alma mater's legacy.
         </p>
