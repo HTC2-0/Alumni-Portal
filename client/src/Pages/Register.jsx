@@ -1,12 +1,8 @@
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-
-import { Toaster } from "react-hot-toast";
-import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import { Link } from "react-router-dom";
 
 import { useState } from "react";
 

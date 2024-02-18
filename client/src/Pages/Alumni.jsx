@@ -10,7 +10,16 @@ const Alumni = () => {
         className="flex-grow flex justify-center items-center"
         style={{ paddingTop: "96px" }} 
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center items-center gap-8 mb-[3rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center items-center gap-8 mb-[3rem] overflow-y-scroll no-scrollbar">
+          <AlumniCard />
+          <AlumniCard />
+          <AlumniCard />
+          <AlumniCard />
+          <AlumniCard />
+          <AlumniCard />
+          <AlumniCard />
+          <AlumniCard />
+          <AlumniCard />
           <AlumniCard />
           <AlumniCard />
           <AlumniCard />
