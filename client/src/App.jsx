@@ -4,7 +4,6 @@ import SignInForm from "./Pages/Signin.jsx";
 import Gallery from "./Pages/Gallery.jsx";
 import Events from "./Pages/Events.jsx";
 import Register from "./Pages/Register.jsx";
-import LogIn from "./Pages/LogIn.jsx";
 import Profile from "./Pages/Profile.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -20,7 +19,6 @@ const App = () => {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/events" element={<Events />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<LogIn />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
