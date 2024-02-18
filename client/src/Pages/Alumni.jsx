@@ -5,6 +5,9 @@ const Alumni = () => {
   return (
     <div>
       <Navbar />
+      <div className='w-full h-[46rem] relative top-[96px] border border-black flex justify-center items-center mb-24'>
+        
+      </div>
       <Footer />
     </div>
   );
