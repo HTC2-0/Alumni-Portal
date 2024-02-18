@@ -6,7 +6,7 @@ const SignInForm = () => {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen mt-12">
         <div className="w-full max-w-xl  p-8 bg-[#f8f9fa] shadow-lg border rounded-lg">
           <h2 className="text-3xl text-center font-bold text-slate-600 mb-10">
             SIGN IN
