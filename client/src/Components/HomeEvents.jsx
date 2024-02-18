@@ -23,21 +23,22 @@ const iiitKotaEvents = [
 // Sample random news pieces
 const newsPieces = [
   {
-    title: "New Study Reveals Impact of Climate Change on Agriculture",
+    title: "Impact of Climate Change on Agriculture Explored in New Study",
     date: "February 17, 2024",
-    source: "New York Times",
+    source: "IIIT Kota News",
   },
   {
-    title: "Government Announces Funding for STEM Education",
+    title: "STEM Education Receives Funding Boost from Government",
     date: "February 18, 2024",
-    source: "CNN",
+    source: "IIIT Kota News",
   },
   {
-    title: "SpaceX Successfully Launches New Satellite into Orbit",
+    title: "New Satellite Successfully Launched into Orbit by SpaceX",
     date: "February 19, 2024",
-    source: "Space.com",
+    source: "IIIT Kota News",
   },
 ];
+
 
 const HomeEvents = () => {
   return (
