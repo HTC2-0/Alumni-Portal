@@ -30,7 +30,7 @@ const Profile = () => {
         </div>
 
         <div className="text-[4rem] max-sm:text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-          <h1 className="inline titillium-web-bold">Batch of 2018</h1>
+          <h1 className="inline titillium-web-bold">Batch of 2022</h1>
         </div>
       </div>
 
@@ -51,7 +51,7 @@ const Profile = () => {
                 Profile Information
               </h2>
               <p className="mb-3">
-                <strong>Email:</strong> 2022KUCP1036@iiitkota.ac.in
+                <strong>Email:</strong> 2018KUCP1036@iiitkota.ac.in
               </p>
               <p className="mb-3">
                 <strong>Education:</strong> B.Tech Computer Science and
