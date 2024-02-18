@@ -69,16 +69,11 @@ const Navbar = () => {
           >
             <ul className="flex flex-col md:flex-row md:items-center p-4 md:p-0 mt-4 md:mt-0 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-white sm:-translate-x-[20rem]">
               <li>
-                <Link
-                  to="/"
-                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${
-                    location.pathname === "/"
+                  <Link to="/home" className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${
+                    location.pathname === "/home"
                       ? "text-blue-700"
                       : "text-gray-700"
-                  }`}
-                >
-                  <Link to="/home">Home</Link>
-                </Link>
+                  }`}>Home</Link>
               </li>
               <li>
                 <Link
