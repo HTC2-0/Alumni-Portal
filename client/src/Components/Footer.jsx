@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer
       className="text-white
-    -600 body-font bg-gray-400 shadow-md text-xl josefin-sans"
+    -600 body-font bg-gray-600 shadow-md text-xl josefin-sans"
     >
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
@@ -13,28 +13,28 @@ const Footer = () => {
               <Link
                 to="https://www.iiitkota.ac.in"
                 target="_blank"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 IIIT Kota Website
               </Link>
               <Link
                 to="https://tpcell.iiitkota.ac.in/"
                 target="_blank"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 Training and Placement Cell
               </Link>
               <Link
                 to="https://iiitkota.ac.in/faculty"
                 target="_blank"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 Faculty in Charge
               </Link>
               <Link
                 to="https://iiitkota.ac.in/tender-invitations"
                 target="_blank"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 Tender Invitations
               </Link>
@@ -45,28 +45,28 @@ const Footer = () => {
               <Link
                 to="https://iiitkota.ac.in/holidays"
                 target="_blank"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 Holidays
               </Link>
               <Link
                 to="https://iiitkota.ac.in/recruitment"
                 target="_blank"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 Recruitments
               </Link>
               <Link
                 to="https://iiitkota.ac.in/it-infrastructure"
                 target="_blank"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 IT Infrastructure
               </Link>
               <Link
                 to="https://iiitkota.ac.in/rti"
                 target="_blank"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 RTI
               </Link>
@@ -76,25 +76,25 @@ const Footer = () => {
             <nav className="list-none mb-10 h-full flex flex-col justify-between">
               <Link
                 to="#"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 First Link
               </Link>
               <Link
                 to="#"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 Second Link
               </Link>
               <Link
                 to="#"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 Third Link
               </Link>
               <Link
                 to="#"
-                className="text-white-600 hover:text-blue-200 mb-3 transition-all transform hover:translate-x-2 hover:underline"
+                className="text-white-600 hover:text-blue-500 mb-3 transition-all transform hover:translate-x-2 hover:underline"
               >
                 Fourth Link
               </Link>

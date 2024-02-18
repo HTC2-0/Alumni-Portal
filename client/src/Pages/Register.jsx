@@ -5,6 +5,8 @@ import AcademicDetails from "../Components/Registration_Form/AcademicDetails";
 import PersonalDetails from "../Components/Registration_Form/PersonalDetails";
 import ContactDetails from "../Components/Registration_Form/ContactDetails";
 
+import { Link } from "react-router-dom";
+
 import { useState } from "react";
 
 const handleSubmit = (e) => {
@@ -50,6 +52,11 @@ const Register = () => {
               >
                 Submit Form
               </button>
+            </div>
+            <br />
+            <div className="flex justify-center items-center gap-3">
+            <p className="text-gray-900">Already have an account? </p>
+              <Link to="/signin" className="hover:underline hover:text-gray-900 text-gray-700">SignIn</Link>
             </div>
           </form>
         </div>

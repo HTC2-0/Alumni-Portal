@@ -6,11 +6,14 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
+      <nav className="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 shadow-xl">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <Link
+            to="/"
+            className="flex items-center space-x-3 rtl:space-x-reverse"
+          >
             <img src={College} className="h-16 " alt="Flowbite Logo" />
-            <span className="self-center text-lg font-bold uppercase tracking-wider">
+            <span className="self-center text-lg text-gray-900 font-bold uppercase tracking-wider">
               Alumni Portal
             </span>
           </Link>
@@ -38,16 +41,24 @@ const Navbar = () => {
             <ul className="flex flex-col md:flex-row md:items-center p-4 md:p-0 mt-4 md:mt-0 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:border-0 md:bg-white">
               <li>
                 <Link
-                  to="/"
-                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${location.pathname === '/' ? 'text-blue-700' : 'text-gray-700'}`}
+                  to="/signin"
+                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${
+                    location.pathname === "/signin"
+                      ? "text-blue-700"
+                      : "text-gray-700"
+                  }`}
                 >
-                  Home
+                  <Link to="/signin">Home</Link>
                 </Link>
               </li>
               <li>
                 <Link
                   to="/alumni"
-                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${location.pathname === '/alumni' ? 'text-blue-700' : 'text-gray-700'}`}
+                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${
+                    location.pathname === "/alumni"
+                      ? "text-blue-700"
+                      : "text-gray-700"
+                  }`}
                 >
                   Alumni
                 </Link>
@@ -55,7 +66,11 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/profile"
-                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${location.pathname === '/profile' ? 'text-blue-700' : 'text-gray-700'}`}
+                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${
+                    location.pathname === "/profile"
+                      ? "text-blue-700"
+                      : "text-gray-700"
+                  }`}
                 >
                   Profile
                 </Link>
@@ -63,7 +78,11 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/gallery"
-                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${location.pathname === '/gallery' ? 'text-blue-700' : 'text-gray-700'}`}
+                  className={`block py-2 px-3 text-xl rounded md:bg-transparent md:p-0 ${
+                    location.pathname === "/gallery"
+                      ? "text-blue-700"
+                      : "text-gray-700"
+                  }`}
                 >
                   Gallery
                 </Link>
