@@ -8,7 +8,7 @@ const AlumniCard = () => {
 
   return (
     <div
-      className="relative h-[13rem] flex flex-col mt-6 text-gray-700 bg-gray-100 shadow-md bg-clip-border rounded-xl w-96"
+      className="relative h-[13rem] flex flex-col mt-6 text-gray-700 bg-gray-100 shadow-md bg-clip-border rounded-xl w-96 sm:w-72 max-sm:w-64"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
