@@ -1,3 +1,5 @@
+// Database connection file
+
 import mongoose from "mongoose";
 
 mongoose.set("strictQuery", false);

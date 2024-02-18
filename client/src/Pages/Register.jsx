@@ -427,7 +427,7 @@ const Register = () => {
                     }
                     required
                   />
-                  console.log(details)
+                 
                 </div>
               </div>
             </div>

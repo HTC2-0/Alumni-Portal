@@ -1,5 +1,5 @@
 import { config } from "dotenv";
-config();
+config();  // dotnev configs
 
 
 import app from './app.js';

@@ -1,3 +1,5 @@
+// User route for registration and login pages 
+
 import { Router } from "express";
 
 import {

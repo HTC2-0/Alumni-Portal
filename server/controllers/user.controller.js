@@ -1,18 +1,18 @@
+// User controller routes
+
 import User from "../models/user.model.js";
 import AppError from "../utils/appError.js";
 import asyncHandler from "../middlewares/asyncHandler.middleware.js";
 import { comparePassword } from "../utils/passwordUtils.js";
 import validator from "validator";
-// import jwt from jsonwebtoken
 import jwt from "jsonwebtoken";
-// import comparePassword from './models'
+import bcrypt from "bcryptjs";
+
 const cookieOptions = {
   secure: process.env.NODE_ENVc === "production" ? true : false,
   maxAge: 7 * 24 * 60 * 60 * 1000,
   httpOnly: true,
 };
-
-import bcrypt from "bcryptjs"; // Import bcrypt library
 
 export const registerUser = asyncHandler(async (req, res, next) => {
   const {
@@ -110,7 +110,6 @@ export const registerUser = asyncHandler(async (req, res, next) => {
 });
 
 export const loginUser = asyncHandler(async (req, res, next) => {
-  // Destructuring the necessary data from req object
   const { collegeEmail, password } = req.body;
 
   // Check if the data is there or not, if not throw error message
@@ -120,9 +119,6 @@ export const loginUser = asyncHandler(async (req, res, next) => {
 
   // Finding the user with the sent email
   const user = await User.findOne({ collegeEmail }).select("+password");
-  // console.log("Hello");
-
-  // If no user or sent password do not match then send generic response
   if (!(user && (await comparePassword(password, user.password)))) {
     return next(
       new AppError(
@@ -147,16 +143,12 @@ export const loginUser = asyncHandler(async (req, res, next) => {
   // Setting the token in the cookie with name token along with cookieOptions
   res.cookie("token", token, cookieOptions);
 
-  // If all good send the response to the frontend
   res.status(200).json({
     success: true,
     message: "User logged in successfully",
     user,
   });
 });
-
-// import asyncHandler from 'express-async-handler';
-// import User from '../models/User'; // Assuming User model is defined in a separate file
 
 export const data = asyncHandler(async (req, res, next) => {
   try {

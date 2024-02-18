@@ -1,6 +1,8 @@
+// user model 
+
 import { Schema, model } from "mongoose";
-import bcrypt from "bcryptjs";
-import { comparePassword } from "../utils/passwordUtils.js";
+// import bcrypt from "bcryptjs";
+// import { comparePassword } from "../utils/passwordUtils.js";
 
 const userSchema = new Schema(
   {
