@@ -27,7 +27,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(details);
 
     const {
       fullName,
@@ -46,7 +45,7 @@ const Register = () => {
     } = details;
 
     try {
-      const { details } = await axios.post(
+      const { user } = await axios.post(
         "http://localhost:6014/api/v1/user/register",
         {
           fullName,
@@ -64,14 +63,6 @@ const Register = () => {
           workingStatus,
         }
       );
-
-      if (details.error) {
-        toast.error(details.error);
-      } else {
-        setDetails({});
-        toast.success(`Login Successful! Welcome ${details.fullName}!`);
-        navigate("/");
-      }
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +71,6 @@ const Register = () => {
   return (
     <>
       <Navbar />
-      <Toaster position="bottom-right" toastOptions={{ duration: 2000 }} />
       <div className="flex justify-center items-center mt-[5rem]">
         <div className="w-full max-w-4xl">
           <form

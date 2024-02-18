@@ -1,32 +1,43 @@
 import express from "express";
 import { config } from "dotenv";
 import cookieParser from "cookie-parser";
-import cors from 'cors';
-import userRoutes from './routes/user.routes.js';
-
-config(); // Load environment variables from a .env file
+config();
+import cors from "cors";
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// Third-Party
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
 app.use(cookieParser());
-app.use(cors({
-  origin: [process.env.FRONTEND_URL],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: [process.env.FRONTEND_URL],
+    credentials: true,
+  })
+);
 
-// Routes
-app.get('/ping', (_req, res) => {
-  res.send('Pong');
+// Server Status Check Route
+app.get("/ping", (_req, res) => {
+  res.send("Pong");
 });
 
-app.use('/api/v1/user', userRoutes);
+import userRoutes from "./routes/user.routes.js";
 
-// Error Handling Middleware
-app.use((req, res) => {
-  res.status(404).send('OOPS! 404 page not found');
+app.use("/api/v1/user", userRoutes);
+// console.log("Hello");
+
+
+// this is for any random url
+app.all("*", (req, res) => {
+  res.status(404).send("OOPS! 404 page not found");
 });
 
 export default app;
