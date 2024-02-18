@@ -3,6 +3,7 @@ import AppError from '../utils/appError.js';
 import asyncHandler from '../middlewares/asyncHandler.middleware.js';
 // import jwt from jsonwebtoken
 import jwt from 'jsonwebtoken';
+// import comparePassword from './models'
 const cookieOptions = {
   secure: process.env.NODE_ENVc === 'production' ? true : false,
   maxAge: 7 * 24 * 60 * 60 * 1000,
@@ -75,7 +76,7 @@ export const loginUser = asyncHandler(async (req, res, next) => {
   }
 
   // Finding the user with the sent email
-  const user = await User.findOne({ email }).select('+password');
+  const user = await User.findOne({ collegeEmail }).select('+password');
 
   // If no user or sent password do not match then send generic response
   if (!(user && (await user.comparePassword(password)))) {
@@ -85,7 +86,13 @@ export const loginUser = asyncHandler(async (req, res, next) => {
   }
 
   // Generating a JWT token
-  const token = await user.generateJWTToken();
+  const token = jwt.sign(
+    {id: user._id, email},
+    'shhhh', // process.env.jwtsecret
+    {
+      expiresIn: "2h"
+    }
+  );
 
   // Setting the password to undefined so it does not get sent in the response
   user.password = undefined;
