@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RiRadioButtonFill } from 'react-icons/ri'; 
 import K1 from "../assets/k1.webp";
@@ -25,23 +25,29 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    const newIndex = (currentIndex - 1 + slides.length) % slides.length;
     setCurrentIndex(newIndex);
   };
 
   const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    const newIndex = (currentIndex + 1) % slides.length;
     setCurrentIndex(newIndex);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // Change slide every 5 seconds (5000 milliseconds)
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
 
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
 
   return (
-    <div className='w-full h-[45rem] m-auto py-16 px-4 relative top-10 mb-5 group'>
+    <div className='w-full h-[45rem] m-auto py-16 px-4 relative top-10 mb-5 group swiper'>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].src})` }} // Fixed src access
         className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
